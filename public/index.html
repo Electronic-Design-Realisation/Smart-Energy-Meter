@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Energy Meters</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class=".container-fluid">
+        <div class=".container-fluid header text-center">
+            <div class="row">
+                <div class="col-9 header_title">
+                    <div>Smart Energy Meter Dashboard</div>
+                </div>
+                <div class="col-3">
+                    <button type="button" id="upper_login_btn" class="btn btn-outline-secondary border-none login">
+                        <img src="images/img_avatar_male.png" class="img-fluid rounded profile_picture" alt="unkown user"> 
+                        Sign up
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="login_form_container" class="form_container mb-5">
+            <div class="login_form">
+                <div class="text-center login_header">
+                    Enter Credentials
+                </div>
+                <div class="login_form_content">
+                    <div class="error_message_space" id="login_email_error_message_space">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16" hidden>
+                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <label hidden>Invalid email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="login_email_txt" placeholder="name@example.com">
+                        <label for="floatingInput">Email Address</label>
+                    </div>
+                    <div class="error_message_space" id="login_pwd_error_message_space">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16" hidden>
+                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <label hidden>Incorrect password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="login_pwd_txt" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-link login_forgot_password">Forgot Password</button>
+                    </div>
+                    <div class="mb-3 login_buttons">
+                        <div class="mb-3 text-center">
+                            <button type="button" id="n_login" class="btn btn-primary login_button">Log In</button>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" id="g_login" class="btn btn-light continue_with_google">
+                                <img src="images/google_icon.jpeg" class="img-fluid rounded profile_picture" alt="google icon"> 
+                                Continue with Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sign_up_form_container" class="form_container mb-5" hidden>
+            <div class="login_form">
+                <div class="text-center login_header">
+                    Create an Account
+                </div>
+                <div class="login_form_content">
+                    <div class="error_message_space" id="company_name_error_message_space">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16" hidden>
+                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <label hidden>Enter a valid company name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="sign_up_company_name_txt" placeholder="name@example.com">
+                        <label for="floatingInput">Company Name</label>
+                    </div>
+                    <div class="error_message_space" id="email_error_message_space">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16" hidden>
+                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <label hidden>Enter a valid email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="sign_up_email_txt" placeholder="name@example.com">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="error_message_space" id="password_error_message_space">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16" hidden>
+                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <label hidden>The passwords do not match</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="sign_up_pwd_txt" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="error_message_space" id="re_password_error_message_space">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16" hidden>
+                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                        </svg>
+                        <label hidden>The passwords do not match</label>
+                    </div>
+                    <div class="form-floating mb-5">
+                        <input type="password" class="form-control" id="sign_up_re_pwd_txt" placeholder="Password">
+                        <label for="floatingPassword">Retype Password</label>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button type="button" id="sign_up_submit_btn" class="btn btn-primary login_button">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+.header{
+    background-color: burlywood;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 123, 255, .2);
+    font-size: 1rem;
+    font-family:'Verdana', 'Geneva', 'Tahoma', sans-serif;
+}
+
+.border-none{
+    border: none;
+}
+
+.profile_picture{
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
+.login{
+    color: #3c3d3e;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+.login:hover{
+    background-color: rgb(214, 166, 103);
+}
+
+.border_1_px{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.15rem;
+    border-right: 1px solid rgba(43, 43, 44, 0.2);
+}
+
+.form_container{
+    padding-top: 2rem;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    font-size: 1rem;
+}
+
+.login_form{
+    width: 30rem;
+    margin: auto;
+    border: 1px solid rgba(74, 74, 74, 0.2);
+    border-radius: 10px;
+}
+
+.login_header{
+    background-color: rgb(64, 120, 153);
+    font-size: 1.1rem;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.login_form_content{
+    padding: 30px;
+}
+
+.login_button{
+    background-color: rgb(64, 120, 153);
+    border: none;
+    width: 14.74951171875rem;
+}
+
+.login_button:hover{
+    background-color: rgb(83, 161, 206);
+}
+
+.login_forgot_password{
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.login_buttons{
+    text-align: center;
+}
+
+.continue_with_google{
+    background-color: white;
+    border-color: rgb(56, 56, 56);
+}
+
+.continue_with_google:hover{
+    background-color: rgb(251, 251, 251);
+}
+
+.error_message_space{
+    height: 1.2rem;
+    font-size: 0.8rem;
+    color: #ef1e1e;
+}
