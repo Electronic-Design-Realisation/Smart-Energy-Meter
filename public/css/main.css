@@ -37,6 +37,7 @@
     align-items: center;
     font-size: 1.15rem;
     border-right: 1px solid rgba(43, 43, 44, 0.2);
+    text-transform: capitalize;
 }
 
 .form_container{
@@ -97,4 +98,45 @@
     height: 1.2rem;
     font-size: 0.8rem;
     color: #ef1e1e;
+}
+
+.dashboard_container{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    font-size: 1rem;
+    background-color: rgb(235, 244, 249);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.department_button{
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid black;
+}
+
+.department_button:hover{
+    font-size: 1.2rem;
+}
+
+.content_centered{
+    text-align: center;
+}
+
+.modal_add_button{
+    background-color: rgb(64, 120, 153);
+    border-color: rgb(64, 120, 153);
+}
+
+.modal_add_button:hover{
+    background-color: rgb(83, 161, 206);
+    border-color: rgb(83, 161, 206);
+}
+
+.row_extended{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
