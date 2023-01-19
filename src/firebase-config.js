@@ -7,7 +7,8 @@ const firebaseConfig = {
     storageBucket: "smart-energy-meter-84975.appspot.com",
     messagingSenderId: "748195001507",
     appId: "1:748195001507:web:11eef065f557c87cc7bb16",
-    measurementId: "G-54TW59RT7H"
+    measurementId: "G-54TW59RT7H",
+    databaseURL: "https://smart-energy-meter-84975-default-rtdb.asia-southeast1.firebasedatabase.app"
 };
 
 export function getFirebaseConfig() {

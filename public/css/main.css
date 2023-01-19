@@ -112,6 +112,18 @@
     border-bottom-right-radius: 5px;
 }
 
+.device_dashboard_container{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    font-size: 1rem;
+    background-color: rgb(235, 244, 249);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 .department_button{
     width: 10rem;
     height: 10rem;
@@ -140,3 +152,163 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+.new_type_btn_container{
+    padding-bottom: 1rem;
+}
+
+.add_new_type_btn{
+    background-color: rgb(64, 120, 153);
+    border-color: rgb(64, 120, 153);
+}
+
+.add_new_type_btn:hover{
+    background-color: rgb(83, 161, 206);
+    border-color: rgb(83, 161, 206);
+}
+
+.individual_device_dashboard_container{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    font-size: 1rem;
+    background-color: rgb(235, 244, 249);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.top_part{
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+.toggle_btn_container{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.routine_setting_container{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.primary_plot_container{
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    margin: auto;
+    width: 50%;
+}
+
+.advanced_plots_container{
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.reactive_power_plot_container{
+    margin: auto;
+    width: 50%;
+    padding-bottom: 1rem;
+}
+
+.voltage_fluctuations_plot_container{
+    margin: auto;
+    width: 50%;
+    padding-bottom: 1rem;
+}
+
+.power_factor_fluctuations_plot_container{
+    margin: auto;
+    width: 50%;
+    padding-bottom: 1rem;
+}
+
+.main_energy_consumption_value_container{
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.energy_consumption_value_container{
+    width: 30rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    border: 1px solid rgb(11, 88, 202);
+    border-radius: 10px;
+
+    overflow:hidden; 
+    word-wrap:break-word;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    background-color: rgb(208, 226, 254);
+    color: rgb(11, 88, 202);
+}
+
+/* ------------- */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4ebc1b;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #4ebc1b;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

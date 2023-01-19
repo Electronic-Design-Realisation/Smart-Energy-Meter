@@ -117,7 +117,82 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div> 
+        
+        <div class="container-lg new_type_btn_container">
+            <button type="button" id="add_new_type_btn" class="btn btn-primary add_new_type_btn" data-bs-toggle="modal" data-bs-target="#new_type_add_modal" hidden>Add new device type</button>
+        </div>
+
+        <div class="container-lg individual_device_dashboard_container" id="individual_device_dashboard_container" hidden>
+            <div class="top_part row">
+                <div class="toggle_btn_container col">
+                    <label class="switch">
+                        <input type="checkbox" id="device_switch">
+                        <span class="slider round"></span>
+                    </label>                  
+                </div>
+                <div class="routine_setting_container col">
+                    <div class="mb-3">
+                        <label for="switch_on_time_txt" class="form-label">Switch On Time</label>
+                        <input type="time" class="form-control" id="switch_on_time_txt" aria-describedby="timeHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="switch_off_time_txt" class="form-label">Switch Off Time</label>
+                        <input type="time" class="form-control" id="switch_off_time_txt">
+                    </div>
+                    <button id="set_routine_btn" class="btn btn-primary">Set Routine</button>
+                </div>
+            </div>
+            <div class="primary_plot_container" id="primary_plot"></div>
+            <div class="main_energy_consumption_value_container container-sm">
+                <div class="energy_consumption_value_container" id="daily_power_consumption_container">
+                    Daily Power Consumption: 0 units (kWh)
+                </div>
+                <div class="energy_consumption_value_container" id="monthly_power_consumption_container">
+                    Monthly Power Consumption: 0 units (kWh)    
+                </div>
+            </div>
+            <div class="advanced_plots_container">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                            Reactive Power
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <div class="reactive_power_plot_container" id="reactive_power_plot"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            Voltage Fluctuations
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <div class="voltage_fluctuations_plot_container" id="voltage_fluctuations_plot"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                          Power Factor Fluctuations
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            <div class="power_factor_fluctuations_plot_container" id="power_factor_fluctuations_plot"></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- New Department Modal -->
         <div class="modal fade" id="department_name_modal" tabindex="-1" role="dialog" aria-labelledby="department_name_model_title" aria-hidden="true">
@@ -140,8 +215,64 @@
             </div>
         </div>
 
+        <div class="modal fade" id="device_add_modal" tabindex="-1" role="dialog" aria-labelledby="device_add_modal_title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="device_add_modal_title">Add New Device</h5>
+                        <button type="button" class="btn-close" id="device_add_modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="error_message_space" id="device_id_error_message_space" hidden>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+                                <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+                            </svg>
+                            <label>This device id is already in use</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="device_add_modal_id_txt" placeholder="name@example.com">
+                            <label for="floatingInput">Device ID</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="device_add_modal_name_txt" placeholder="name@example.com">
+                            <label for="floatingInput">Device Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select id="device_add_modal_type_select" class="form-control">
+
+                            </select>
+                            <label for="floatingInput">Device Type</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary modal_add_button" id="add_new_device_btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
+
+        <div class="modal fade" id="new_type_add_modal" tabindex="-1" role="dialog" aria-labelledby="new_type_add_modal_title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="new_type_add_modal_title">Add New Device Type</h5>
+                        <button type="button" class="btn-close" id="new_type_add_modal_close_btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="new_type_add_modal_txt" placeholder="name@example.com">
+                            <label for="floatingInput">New Device Type</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary modal_add_button" id="new_type_add_modal_submit_btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="scripts/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
